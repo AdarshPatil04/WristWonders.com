@@ -1,0 +1,262 @@
+/* Google Fonts  */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* VARIABLES CSS  */
+:root {
+  --Header-Height: 4.5rem;
+  /* Colors  */
+  --First-Color: #083d77;
+  --Button-Color: #2b2b2b;
+  --Button-Color-ALT: #363636;
+  --Title-Color: #262626;
+  --Text-Color: #595959;
+  --Text-Color-Light: #8c8c8c;
+  --Body-Color: #fcfcfc;
+  --Container-Color: #fff;
+  --Border-Color: #f0f0f0;
+  /* Font and Typography */
+  font-size: 62.5%;
+  --Body-Font: "Poppins", sans-serif;
+  --Biggest-Font-Size: 2.6rem;
+  --H1-Font-Size: 2.2rem;
+  --H2-Font-Size: 1.95rem;
+  --H3-Font-Size: 1.65rem;
+  --Normal-Font-Size: 1.35rem;
+  --Small-Font-Size: 1.25rem;
+
+  /* Font Weight  */
+  --Font-Medium: 500;
+  --Font-Bold: 700;
+  /* Margines Bottom  */
+  --MB-0-5: 0.5rem;
+  --MB-0-75: 0.75rem;
+  --MB-1: 1rem;
+  --MB-1-5: 1.5rem;
+  --MB-2: 2rem;
+  --MB-2-5: 2.5rem;
+  --MB-3: 3rem;
+  /* Z-index  */
+  --Z-Tooltip: 10;
+  --Z-Fixed: 100;
+}
+
+@media screen and (min-width: 968px) {
+  :root {
+    --Biggest-Font-Size: 2.5rem;
+    --H1-Font-Size: 2.25rem;
+    --H2-Font-Size: 1.5rem;
+    --H3-Font-Size: 1.25rem;
+    --Normal-Font-Size: 1rem;
+    --Small-Font-Size: 0.975rem;
+  }
+}
+
+/* Base  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+body,
+button,
+input {
+  font-family: var(--Body-Font);
+  font-size: var(--Normal-Font-Size);
+}
+
+body {
+  margin: 0;
+  background-color: var(--Body-Color);
+  color: var(--Text-Color);
+  /* Animation For Dark Mode  */
+  transition: 0.4s;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--Title-Color);
+  font-weight: var(--Font-Medium);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* Reusable CSS Classes  */
+.container {
+  max-width: 1025px;
+  margin-left: var(--MB-1-5);
+  margin-right: var(--MB-1-5);
+}
+
+.grid {
+  display: grid;
+}
+
+.main {
+  overflow: hidden;
+}
+
+.section {
+  padding: 12.5rem 0 1rem;
+}
+
+.section__title {
+  position: relative;
+  font-size: var(--H3-Font-Size);
+  margin-bottom: var(--MB-3);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.section__title::before {
+  content: "";
+  position: absolute;
+  top: -1rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 65px;
+  height: 1px;
+  background-color: var(--First-Color);
+}
+
+/*====== Theme ====== */
+/* Variables Dark Theme  */
+body.dark-theme {
+  --First-Color: #083d77;
+  --Button-Color: hsl(0, 0%, 24%);
+  --Button-Color-ALT: hsl(0, 0%, 28%);
+  --Title-Color: hsl(0, 0%, 95%);
+  --Text-Color: hsl(0, 0%, 75%);
+  --Body-Color: hsl(0, 0%, 12%);
+  --Container-Color: hsl(0, 0%, 16%);
+  --Border-Color: hsl(0, 0%, 20%);
+}
+/* Button Dark/Light  */
+.change-theme {
+  color: var(--Title-Color);
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/*     Color Changes in some parts of 
+   the website, in dark theme  */
+.dark-theme .change-theme,
+.dark-theme .navigation__toggle,
+.dark-theme .navigation__shop,
+.dark-theme {
+  color: hsl(0, 0%, 15%);
+}
+
+.dark-theme .scroll-header {
+  box-shadow: 0 1px 4px hsla(0, 0%, 4%, 0.3);
+}
+
+.dark-theme {
+  .scroll-header .change-theme,
+  .scroll-header .navigation__toggle,
+  .scroll-header .navigation__shop {
+    color: #fff;
+  }
+
+  .scroll-header i {
+    color: #fff;
+  }
+
+  .navigation__shop,
+  .navigation__toggle,
+  .change-theme {
+    color: #fff;
+  }
+
+  p {
+    color: #fff;
+  }
+
+  .home__price,
+  .featured__price,
+  .products__price,
+  .testimonial__profile__detail,
+  .cart__price,
+  .cart__amount-trash,
+  .new__price {
+    color: #fff;
+  }
+
+  .newsletter__description,
+  .newsletter__title {
+    color: #fff;
+  }
+
+  .newsletter__subscribe button {
+    color: #fff;
+    background-color: #000;
+    border: 1px solid #000;
+  }
+
+  .newsletter__subscribe button:hover {
+    color: #fff;
+    background-color: transparent;
+    border-color: #fff;
+  }
+
+  .new__card button:hover {
+    color: #fff;
+    background-color: transparent;
+    border: 1px solid #fff;
+  }
+
+  .footer__list li {
+    color: var(--Text-Color);
+  }
+
+  .products__button:hover {
+    color: #fff;
+  }
+
+  .cart__amount__content {
+    color: #fff;
+  }
+
+  .cart__prices {
+    color: #fff;
+  }
+}
+
+.dark-theme .button {
+  color: var(--Button-Color);
+  background-color: #fff;
+  border: 1px solid #fff;
+}
+
+.dark-theme .button:hover {
+  color: #fff;
+  background-color: transparent;
+}
